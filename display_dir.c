@@ -66,7 +66,7 @@ void display_dir(int flag_param, char *path)
     closedir(dir);
 
 
-    if((flag_param==4)||(flag_param==6)) 
+    if(flag_param>4) 
     {
        struct stat bufnow; 
        for(i = 0; i < count; i++)
@@ -108,7 +108,7 @@ void display_dir(int flag_param, char *path)
           } 
        }
     }
-    if((flag_param==5)||(flag_param==7))
+    /*if((flag_param==5)||(flag_param==7))
     {
        struct stat bufnow;
        for(i = 0; i < count; i++)
