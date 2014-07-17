@@ -4,7 +4,7 @@ void display_dir(int flag_param, char *path)
     DIR            *dir;   //目录流符号
     struct dirent  *ptr;
     int       count = 0;   //文件数量
-    char  filenames[2047][255],temp[255];
+    char  filenames[47][500],temp[500];
 
     /*取该目录下文件总数和最长的文件名*/
     dir = opendir(path);
@@ -20,10 +20,11 @@ void display_dir(int flag_param, char *path)
             g_maxlen =  strlen(ptr->d_name);
         }
         count++;
+       if(count>45) break;
     }
     closedir(dir);
 
-    if(count>2047)
+    if(count>45)
     {
        my_err("too many files under this dir",__LINE__);
     }		
