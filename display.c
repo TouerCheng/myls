@@ -1,3 +1,4 @@
+#include "ls.h"
 void display(int flag, char * pathname)
 {
     int	   i, j;
@@ -20,6 +21,7 @@ void display(int flag, char * pathname)
     if ( lstat(pathname, &buf) == -1 ) 
     {
         my_err("stat", __LINE__);
+        return;
     }
 	
     switch (flag) 

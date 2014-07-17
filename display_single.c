@@ -1,3 +1,4 @@
+#include "ls.h"
 void display_single(char *name)
 {
     int i, len;

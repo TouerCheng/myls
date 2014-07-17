@@ -1,15 +1,17 @@
+#include "ls.h"
 void display_dir(int flag_param, char *path)
 {
     DIR            *dir;   //目录流符号
     struct dirent  *ptr;
     int       count = 0;   //文件数量
-    char  filenames[256][PATH_MAX+1],temp[PATH_MAX+1];
+    char  filenames[2047][255],temp[255];
 
     /*取该目录下文件总数和最长的文件名*/
     dir = opendir(path);
     if (dir == NULL) 
     {
         my_err("opendir", __LINE__);
+        return;
     }
     while((ptr = readdir(dir))!=NULL) 
     {
@@ -21,7 +23,7 @@ void display_dir(int flag_param, char *path)
     }
     closedir(dir);
 
-    if(count>256)
+    if(count>2047)
     {
        my_err("too many files under this dir",__LINE__);
     }		

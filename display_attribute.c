@@ -1,3 +1,4 @@
+#include "ls.h"
 void display_attribute(struct stat buf, char * name)
 {
    char		buf_time[32];

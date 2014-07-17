@@ -1,3 +1,6 @@
+#include "ls.h"
+int		g_leave_len = MAXROWLEN;	
+int		g_maxlen;	
 int main(int argc, char ** argv)
 {
     int		i, j, k, num;
