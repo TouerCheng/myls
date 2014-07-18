@@ -25,7 +25,7 @@ int main(int argc, char ** argv)
 	}
     }
 	
-    /*只支持参数a和l和R，如果含有其他选项就报错*/
+    /*只支持参数a和l和R，-S 以文件巨细排序-t 以时刻排序。。如果含有其他选项就报错*/
     for(i=0; i<j; i++) 
     {
         if (param[i] == 'a') 
@@ -43,11 +43,28 @@ int main(int argc, char ** argv)
             flag_param |= PARAM_R;
             continue;
         } 
+         else if (param[i] == 't')
+        {
+            flag_param |= PARAM_T;
+            continue;
+        }
+        else if (param[i] == 'S')
+        {
+            flag_param |= PARAM_S;
+            continue;
+        }
+
+
         else 
         {
 	    printf("my_ls: invalid option -%c\n", param[i]);
 	    exit(1);
 	}
+    }
+    if(flag_param>=24)
+    {
+        printf("too much canshu \n");
+        exit(1);
     }
     param[j] = '\0';
 	
