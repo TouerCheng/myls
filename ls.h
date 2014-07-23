@@ -1,8 +1,3 @@
-/*作者：Cheng
- * 实现功能：ls  R S t l a  五个参数
- * 代码风格：华为要求
- */
-
 #ifndef LS_H
 #define LS_H
 
@@ -23,8 +18,6 @@
 #define         PARAM_A         1       // -a: 显示所有文件
 #define         PARAM_L         2       // -l:一行显示一个文件的详细信息
 #define         PARAM_R         4       // -R
-#define         PARAM_T         8       // -t
-#define         PARAM_S         16      // -S
 #define         MAXROWLEN       80      // 一行显示的最多字符数
 
 extern int          g_leave_len ;        // 一行剩余长度，用于输出对齐
